@@ -1,0 +1,17 @@
+.panel {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.8rem;
+  padding: 2rem 1rem;
+}
+
+.photo-block {
+  &__panel {
+    background-color: #00000070;
+    opacity: 0;
+    transition: opacity .3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

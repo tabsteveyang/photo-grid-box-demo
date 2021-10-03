@@ -1,4 +1,4 @@
-import React from 'react';
+import '@scss/index.scss'
 import ReactDOM from 'react-dom';
 import Page from './components/Page.jsx'
 
