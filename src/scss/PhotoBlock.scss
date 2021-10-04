@@ -1,0 +1,18 @@
+.photo-block {
+  &__panel {
+    background-color: #00000070;
+    opacity: 0;
+    transition: opacity .3s;
+    &:hover {
+      opacity: 1;
+    }
+    &__title {
+      position: absolute;
+      width: 100%;
+      font-size: 1.6rem;
+      color: #fff;
+      padding: 1rem;
+      bottom: 0;
+    }
+  }
+}
