@@ -3,8 +3,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = (env) => {
-    const isProduction = env === "production";
+module.exports = (env, argv) => {
+    const isProduction = argv.mode === "production";
 
     return {
         entry: path.join(__dirname, "src", "js", "app.js"),
@@ -37,12 +37,13 @@ module.exports = (env) => {
             alias: {
                 '@js': path.resolve(__dirname, 'src/js/'),
                 '@scss': path.resolve(__dirname, 'src/scss/'),
-                '@component': path.resolve(__dirname, 'src/js/component/')
+                '@component': path.resolve(__dirname, 'src/js/component/'),
+                '@images': path.resolve(__dirname, 'src/images/')
             }
         },
         plugins: [
             new MiniCssExtractPlugin({
-                filename: 'style.css'
+                filename: './css/style.css'
             }),
             new webpack.ProvidePlugin({
                 React: 'react',
@@ -56,6 +57,6 @@ module.exports = (env) => {
                 filename: 'index.html'
             })
         ],
-        devtool: isProduction ? false : 'source-map'
+        devtool: 'source-map'
     };
 };
