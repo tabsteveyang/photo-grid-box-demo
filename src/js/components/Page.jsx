@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import 'photo-grid-box/build/photo-grid-box.min.css'; // import the css from the module
 import PhotoGridBox from 'photo-grid-box';
 import Footer from './Footer';
 
